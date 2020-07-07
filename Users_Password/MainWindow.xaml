@@ -1,0 +1,47 @@
+﻿<Window x:Class="Users_Password.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Users_Password"
+        mc:Ignorable="d"
+        Title="Пароли к учетным записям ИнфоАптека" Height="710" Width="600" ResizeMode="CanMinimize" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="385"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="600"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Height="100" VerticalAlignment="Top" Grid.RowSpan="2">
+            <Label x:Name="Select" Content="Фильтрация по имени" HorizontalAlignment="Left" Width="590" VerticalAlignment="Top" Background="LightGray"/>
+            <TextBox x:Name="Textbox_filter" HorizontalAlignment="Left" Height="35" Width="590" VerticalAlignment="Top" TextChanged="Textbox_filter_TextChanged"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Height="30" VerticalAlignment="Top">
+            <Label Content="Смена Пароля Пользователя:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="390" Background="LightGray"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Top">
+                <TextBox x:Name="Update" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="200"/>
+            </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBox x:Name="Text_Update" Grid.Column="0" HorizontalAlignment="Left" Height="35" Width="380" VerticalAlignment="Top"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" >
+            <Button x:Name="Button_Update" Grid.Column="2" Content="Сменить" VerticalAlignment="Stretch" HorizontalAlignment="Left" Height="35" MaxHeight="35" Width="195" MaxWidth="200" Click="Button_Update_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Height="600" VerticalAlignment="Top">
+            <DataGrid AutoGenerateColumns="False" x:Name="Data_Grid" Height="540" Width="580" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding UserID}" Header="ID" Width="45"/>
+                    <DataGridTextColumn Binding="{Binding User_name}" Header="Пользователи" Width="185"/>
+                    <DataGridTextColumn Binding="{Binding UserNik}" Header="Логин" Width="185"/>
+                    <DataGridTextColumn Binding="{Binding Password}" Header="Пароли" Width="130"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

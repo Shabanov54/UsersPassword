@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<Server xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Пользователь="SYSDBA" Сервер="10.32.10.29" Путь_к_БД="E:\iadb\IAPTEKA.FDB" Пароль="masterkey" Порт="3052">
+  <Name>SCO</Name>
+</Server>
